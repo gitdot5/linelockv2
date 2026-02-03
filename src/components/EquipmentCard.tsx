@@ -1,5 +1,5 @@
 import { Equipment } from '@/data/equipment';
-import { MapPin, Clock, Star, Heart } from 'lucide-react';
+import { Clock, Star, Heart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -58,10 +58,6 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-3">
-              <span className="flex items-center gap-1">
-                <MapPin className="h-4 w-4" />
-                {equipment.location}
-              </span>
               {equipment.hours && (
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -112,10 +108,6 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
       <div className="p-4">
         <h3 className="font-semibold text-foreground mb-2 line-clamp-2 min-h-[48px]">{equipment.title}</h3>
         
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-          <MapPin className="h-4 w-4 flex-shrink-0" />
-          <span className="truncate">{equipment.location}</span>
-        </div>
 
         <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
           <span>{equipment.year}</span>
