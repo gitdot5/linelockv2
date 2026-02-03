@@ -4,6 +4,7 @@ import { Sidebar } from '@/components/Sidebar';
 import { EquipmentGrid } from '@/components/EquipmentGrid';
 import { MobileFilters } from '@/components/MobileFilters';
 import { equipmentData } from '@/data/equipment';
+import heroBanner from '@/assets/hero-banner.jpg';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -83,17 +84,32 @@ const Index = () => {
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       {/* Hero Section */}
-      <section className="bg-dark-bg text-white py-8 px-4">
-        <div className="container mx-auto">
-          <span className="inline-block bg-dark-bg-light text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+      <section 
+        className="relative bg-dark-bg text-white py-16 md:py-24 px-4 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBanner})` }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/90 via-dark-bg/70 to-dark-bg/50" />
+        
+        <div className="container mx-auto relative z-10">
+          <span className="inline-block bg-dark-bg-light/80 backdrop-blur-sm text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-primary/20">
             🔥 BIGGEST SALE OF THE YEAR — Up to $2,000 OFF!
           </span>
-          <h1 className="text-2xl md:text-4xl font-bold mb-2">
-            PREMIUM <span className="text-primary">EQUIPMENT</span> FOR SALE
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            PREMIUM <span className="text-primary">EQUIPMENT</span><br />
+            FOR SALE
           </h1>
-          <p className="text-white/70 max-w-xl">
+          <p className="text-white/80 max-w-xl text-lg mb-6">
             Browse {equipmentData.length} excavators, loaders, dozers, cranes & more from trusted dealers nationwide.
           </p>
+          <div className="flex flex-wrap gap-4">
+            <button className="bg-primary text-dark-bg px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors">
+              Browse Equipment
+            </button>
+            <button className="bg-transparent border border-white/30 text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors">
+              Get a Quote
+            </button>
+          </div>
         </div>
       </section>
 
