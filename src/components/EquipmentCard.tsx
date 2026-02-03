@@ -29,7 +29,7 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
 
   if (viewMode === 'list') {
     return (
-      <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row">
+      <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row">
         <div className="relative w-full sm:w-72 h-48 sm:h-auto flex-shrink-0">
           <img
             src={equipment.image}
@@ -73,10 +73,10 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
           </div>
 
           <div className="flex items-center justify-between">
-            <p className="text-2xl font-bold text-price">{formatPrice(equipment.price)}</p>
+            <p className="text-2xl font-bold text-primary">{formatPrice(equipment.price)}</p>
             <div className="flex gap-2">
               <Button variant="outline" size="sm">Details</Button>
-              <Button size="sm">Contact Seller</Button>
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">Contact Seller</Button>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+    <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
       <div className="relative h-48 overflow-hidden">
         <img
           src={equipment.image}
@@ -128,8 +128,8 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
         </div>
 
         <div className="flex items-center justify-between pt-3 border-t border-border">
-          <p className="text-xl font-bold text-price">{formatPrice(equipment.price)}</p>
-          <Button size="sm">View Details</Button>
+          <p className="text-xl font-bold text-primary">{formatPrice(equipment.price)}</p>
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">View Details</Button>
         </div>
       </div>
     </div>
