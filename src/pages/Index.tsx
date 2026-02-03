@@ -83,11 +83,16 @@ const Index = () => {
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-foreground to-foreground/90 text-card py-8 px-4">
+      <section className="bg-dark-bg text-white py-8 px-4">
         <div className="container mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">Construction Equipment For Sale</h1>
-          <p className="text-card/80">
-            Browse {equipmentData.length} excavators, loaders, dozers, cranes & more from trusted dealers
+          <span className="inline-block bg-dark-bg-light text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+            🔥 BIGGEST SALE OF THE YEAR — Up to $2,000 OFF!
+          </span>
+          <h1 className="text-2xl md:text-4xl font-bold mb-2">
+            PREMIUM <span className="text-primary">EQUIPMENT</span> FOR SALE
+          </h1>
+          <p className="text-white/70 max-w-xl">
+            Browse {equipmentData.length} excavators, loaders, dozers, cranes & more from trusted dealers nationwide.
           </p>
         </div>
       </section>
@@ -147,49 +152,58 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-card py-8 px-4 mt-12">
+      <footer className="bg-dark-bg text-white py-8 px-4 mt-12">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold">HE</span>
-                </div>
-                <span className="font-bold text-lg">HeavyEquip</span>
+                <svg viewBox="0 0 40 40" className="w-8 h-8">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
+                  <circle cx="20" cy="20" r="12" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
+                  <circle cx="20" cy="20" r="4" fill="hsl(180, 100%, 45%)" />
+                  <rect x="18" y="2" width="4" height="8" fill="hsl(180, 100%, 45%)" />
+                  <rect x="18" y="30" width="4" height="8" fill="hsl(180, 100%, 45%)" />
+                  <rect x="2" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
+                  <rect x="30" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
+                </svg>
+                <span className="font-bold text-lg">
+                  <span className="text-primary">Line</span>
+                  <span className="text-white">Lock</span>
+                </span>
               </div>
-              <p className="text-card/70 text-sm">
-                The trusted marketplace for construction equipment since 1998.
+              <p className="text-white/60 text-sm">
+                American-made quality for skid steers, excavators, and tractors. Built to last.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Browse</h4>
-              <ul className="space-y-2 text-sm text-card/70">
-                <li><a href="#" className="hover:text-primary">Excavators</a></li>
-                <li><a href="#" className="hover:text-primary">Wheel Loaders</a></li>
-                <li><a href="#" className="hover:text-primary">Bulldozers</a></li>
-                <li><a href="#" className="hover:text-primary">Cranes</a></li>
+              <h4 className="font-semibold mb-3 text-primary">Browse</h4>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li><a href="#" className="hover:text-primary transition-colors">Excavators</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Wheel Loaders</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Bulldozers</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Cranes</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Services</h4>
-              <ul className="space-y-2 text-sm text-card/70">
-                <li><a href="#" className="hover:text-primary">Sell Equipment</a></li>
-                <li><a href="#" className="hover:text-primary">Dealer Portal</a></li>
-                <li><a href="#" className="hover:text-primary">Financing</a></li>
-                <li><a href="#" className="hover:text-primary">Shipping</a></li>
+              <h4 className="font-semibold mb-3 text-primary">Services</h4>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li><a href="#" className="hover:text-primary transition-colors">Sell Equipment</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Dealer Portal</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">0% Financing</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Fast Shipping</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Contact</h4>
-              <ul className="space-y-2 text-sm text-card/70">
-                <li>1-800-555-EQUIP</li>
-                <li>support@heavyequip.com</li>
-                <li>Mon-Fri 8am-6pm CST</li>
+              <h4 className="font-semibold mb-3 text-primary">Contact</h4>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li>(864) 252-7174</li>
+                <li>support@linelock.com</li>
+                <li>Mon-Sat 8am-6pm EST</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-card/20 mt-8 pt-6 text-sm text-card/50 text-center">
-            © 2024 HeavyEquip. All rights reserved.
+          <div className="border-t border-white/10 mt-8 pt-6 text-sm text-white/40 text-center">
+            © 2024 LineLock Equipment. All rights reserved. Made in USA 🇺🇸
           </div>
         </div>
       </footer>
