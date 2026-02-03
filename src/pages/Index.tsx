@@ -5,6 +5,7 @@ import { EquipmentGrid } from '@/components/EquipmentGrid';
 import { MobileFilters } from '@/components/MobileFilters';
 import { equipmentData } from '@/data/equipment';
 import heroBanner from '@/assets/hero-banner.jpg';
+import logo from '@/assets/logo.png';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -172,21 +173,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <svg viewBox="0 0 40 40" className="w-8 h-8">
-                  <circle cx="20" cy="20" r="18" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
-                  <circle cx="20" cy="20" r="12" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
-                  <circle cx="20" cy="20" r="4" fill="hsl(180, 100%, 45%)" />
-                  <rect x="18" y="2" width="4" height="8" fill="hsl(180, 100%, 45%)" />
-                  <rect x="18" y="30" width="4" height="8" fill="hsl(180, 100%, 45%)" />
-                  <rect x="2" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
-                  <rect x="30" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
-                </svg>
-                <span className="font-bold text-lg">
-                  <span className="text-primary">Line</span>
-                  <span className="text-white">Lock</span>
-                </span>
-              </div>
+              <img src={logo} alt="LineLock Equipment" className="h-10 w-auto mb-4" />
               <p className="text-white/60 text-sm">
                 American-made quality for skid steers, excavators, and tractors. Built to last.
               </p>

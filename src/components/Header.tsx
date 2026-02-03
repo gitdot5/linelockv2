@@ -2,6 +2,7 @@ import { Search, Phone, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
+import logo from '@/assets/logo.png';
 
 interface HeaderProps {
   searchQuery: string;
@@ -33,25 +34,8 @@ export const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="flex items-center">
-              <svg viewBox="0 0 40 40" className="w-10 h-10">
-                <circle cx="20" cy="20" r="18" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
-                <circle cx="20" cy="20" r="12" fill="none" stroke="hsl(180, 100%, 45%)" strokeWidth="2" />
-                <circle cx="20" cy="20" r="4" fill="hsl(180, 100%, 45%)" />
-                <rect x="18" y="2" width="4" height="8" fill="hsl(180, 100%, 45%)" />
-                <rect x="18" y="30" width="4" height="8" fill="hsl(180, 100%, 45%)" />
-                <rect x="2" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
-                <rect x="30" y="18" width="8" height="4" fill="hsl(180, 100%, 45%)" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold">
-                <span className="text-primary">Line</span>
-                <span className="text-white">Lock</span>
-              </h1>
-              <p className="text-xs text-white/60 tracking-wider">EQUIPMENT</p>
-            </div>
+          <div className="flex items-center">
+            <img src={logo} alt="LineLock Equipment" className="h-10 md:h-12 w-auto" />
           </div>
 
           {/* Search */}
