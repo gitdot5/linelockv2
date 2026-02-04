@@ -12,7 +12,10 @@ interface EquipmentCardProps {
 export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const formatPrice = (price: number) => {
+  const formatPrice = (price?: number) => {
+    if (price === undefined || price === null) {
+      return 'Call for Price';
+    }
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',

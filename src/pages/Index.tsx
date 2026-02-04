@@ -38,9 +38,11 @@ const Index = () => {
         return false;
       }
 
-      // Price filter
-      if (item.price < priceRange[0] || item.price > priceRange[1]) {
-        return false;
+      // Price filter (skip items with no price - "Call for Price")
+      if (item.price !== undefined) {
+        if (item.price < priceRange[0] || item.price > priceRange[1]) {
+          return false;
+        }
       }
 
       // Year filter
