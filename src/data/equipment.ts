@@ -1,7 +1,7 @@
 export interface Equipment {
   id: number;
   title: string;
-  price: number;
+  price?: number;
   year: number;
   hours?: number;
   location: string;
@@ -18,8 +18,10 @@ export const categories = [
   { id: 'dozers', name: 'Bulldozers', count: 4 },
   { id: 'cranes', name: 'Cranes', count: 4 },
   { id: 'backhoes', name: 'Backhoe Loaders', count: 3 },
-  { id: 'skid-steers', name: 'Skid Steers', count: 3 },
+  { id: 'skid-steers', name: 'Skid Steers', count: 4 },
   { id: 'dump-trucks', name: 'Dump Trucks', count: 3 },
+  { id: 'trenchers', name: 'Trenchers', count: 1 },
+  { id: 'rollers', name: 'Rollers', count: 1 },
 ];
 
 export const manufacturers = [
@@ -406,10 +408,8 @@ export const equipmentData: Equipment[] = [
   {
     id: 31,
     title: '2021 Vermeer S965TX Mini Skid Steer',
-    price: 52500,
     year: 2021,
-    hours: 850,
-    location: 'Denver, CO',
+    location: 'United States',
     category: 'skid-steers',
     manufacturer: 'Vermeer',
     image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop',
@@ -418,23 +418,20 @@ export const equipmentData: Equipment[] = [
   {
     id: 32,
     title: '1999 Vermeer V5750',
-    price: 18500,
     year: 1999,
-    hours: 4200,
-    location: 'Austin, TX',
-    category: 'excavators',
+    location: 'United States',
+    category: 'trenchers',
     manufacturer: 'Vermeer',
-    image: 'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&h=400&fit=crop',
     condition: 'Used',
   },
   {
     id: 33,
-    title: '2019 Wacker Neuson RD12A Roller',
-    price: 24500,
+    title: '2019 Wacker Neuson RD12A',
     year: 2019,
-    hours: 320,
-    location: 'Phoenix, AZ',
-    category: 'dozers',
+    hours: 150,
+    location: 'United States',
+    category: 'rollers',
     manufacturer: 'Wacker Neuson',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
     condition: 'Used',
