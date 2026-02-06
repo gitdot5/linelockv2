@@ -429,7 +429,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Vermeer',
     make: 'Vermeer',
     model: 'S965TX',
-    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop',
+    image: '/equipment/vermeer-s965tx-mini-skid-steer-2021.jpeg',
     condition: 'Used',
   },
   {
@@ -441,7 +441,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Vermeer',
     make: 'Vermeer',
     model: 'V5750',
-    image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&h=400&fit=crop',
+    image: '/equipment/vermeer-v5750-trencher-1999.jpeg',
     condition: 'Used',
   },
   {
@@ -456,7 +456,7 @@ export const equipmentData: Equipment[] = [
     model: 'RD12A',
     engine: 'Honda',
     facebookUrl: 'https://www.facebook.com/marketplace/item/2322520291578487/',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
     condition: 'Used',
   },
   {
@@ -468,7 +468,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Kubota',
     make: 'Kubota',
     model: 'SVL75-2',
-    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop',
+    image: '/equipment/kubota-svl75-2-track-loader-2019.jpeg',
     condition: 'Used',
   },
   {
@@ -480,7 +480,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Allmand',
     make: 'Allmand',
     model: 'MR15XR',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/cat-generator-mr15xr-2022.jpeg',
     condition: 'Used',
   },
   {
@@ -492,7 +492,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Caterpillar',
     make: 'Caterpillar',
     model: 'MR15XR',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/cat-generator-mr15xr-2022.jpeg',
     condition: 'Used',
   },
   {
@@ -504,7 +504,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
     model: 'G25',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
     condition: 'Used',
   },
   {
@@ -516,7 +516,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Caterpillar',
     make: 'Caterpillar',
     model: '289D3',
-    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop',
+    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
     condition: 'Used',
   },
   {
@@ -528,7 +528,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Skyjack',
     make: 'Skyjack',
     model: '6042',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/skyjack-6042-telehandler-2014.jpeg',
     condition: 'Used',
   },
   {
@@ -540,7 +540,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Bomag',
     make: 'Bomag',
     model: 'BMP8500',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/wacker-neuson-ez53-excavator-2019.jpeg',
     condition: 'Used',
   },
   {
@@ -552,7 +552,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Bobcat',
     make: 'Bobcat',
     model: 'S650',
-    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop',
+    image: '/equipment/bobcat-s650-skid-steer-2012.jpeg',
     condition: 'Used',
   },
   {
@@ -564,7 +564,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
     model: 'EZ53',
-    image: 'https://images.unsplash.com/photo-1621922688758-9a46e1db8785?w=600&h=400&fit=crop',
+    image: '/equipment/towable-generators-2026.jpeg',
     condition: 'Used',
   },
   {
@@ -577,7 +577,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Various',
     make: 'Various',
     model: 'Towable Generator',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+    image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
     condition: 'New',
   },
 ];
