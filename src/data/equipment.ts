@@ -3,7 +3,7 @@ export interface Equipment {
   title: string;
   price?: number;
   year: number;
-  hours?: number;
+  hours?: string;
   location: string;
   category: string;
   manufacturer: string;
@@ -14,35 +14,37 @@ export interface Equipment {
   image: string;
   featured?: boolean;
   condition: 'New' | 'Used' | 'Certified Pre-Owned';
+  status: 'available' | 'sold';
 }
 
 export const categories = [
-  { id: 'excavators', name: 'Excavators', count: 1 },
-  { id: 'skid-steers', name: 'Skid Steers', count: 1 },
-  { id: 'trenchers', name: 'Trenchers', count: 1 },
   { id: 'mini-skid-steers', name: 'Mini Skid Steers', count: 1 },
-  { id: 'compactors', name: 'Compactors', count: 2 },
+  { id: 'trenchers', name: 'Trenchers', count: 1 },
+  { id: 'compactors', name: 'Compactors', count: 1 },
   { id: 'track-loaders', name: 'Track Loaders', count: 2 },
   { id: 'light-towers', name: 'Light Towers', count: 1 },
   { id: 'generators', name: 'Generators', count: 3 },
   { id: 'telehandlers', name: 'Telehandlers', count: 1 },
+  { id: 'plate-compactors', name: 'Plate Compactors', count: 1 },
+  { id: 'skid-steers', name: 'Skid Steers', count: 1 },
+  { id: 'excavators', name: 'Excavators', count: 1 },
 ];
 
 export const manufacturers = [
+  'Allmand',
   'Bobcat',
+  'Bomag',
+  'Caterpillar',
+  'Kubota',
+  'Skyjack',
+  'Various',
   'Vermeer',
   'Wacker Neuson',
-  'Kubota',
-  'Allmand',
-  'Caterpillar',
-  'Skyjack',
-  'Bomag',
-  'Various',
 ];
 
 export const equipmentData: Equipment[] = [
   {
-    id: 31,
+    id: 1,
     title: '2021 Vermeer S965TX Mini Skid Steer',
     year: 2021,
     location: 'United States',
@@ -52,10 +54,11 @@ export const equipmentData: Equipment[] = [
     model: 'S965TX',
     image: '/equipment/vermeer-s965tx-mini-skid-steer-2021.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 32,
-    title: '1999 Vermeer V5750 Trencher',
+    id: 2,
+    title: '1999 Vermeer V5750',
     year: 1999,
     location: 'United States',
     category: 'trenchers',
@@ -64,11 +67,12 @@ export const equipmentData: Equipment[] = [
     model: 'V5750',
     image: '/equipment/vermeer-v5750-trencher-1999.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 33,
-    title: '2019 Wacker Neuson RD12A Low Hours (Honda Engine)',
-    hours: 150,
+    id: 3,
+    title: '2019 Wacker Neuson RD12A low hours (honda engine)',
+    hours: 'Low',
     year: 2019,
     location: 'United States',
     category: 'compactors',
@@ -77,12 +81,13 @@ export const equipmentData: Equipment[] = [
     model: 'RD12A',
     engine: 'Honda',
     facebookUrl: 'https://www.facebook.com/marketplace/item/2322520291578487/',
-    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
+    image: '/equipment/cat-289d3-track-loader-2020.jpeg', // TODO: replace with wacker-neuson-rd12a-compactor-2019.jpeg when uploaded
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 34,
-    title: '2019 Kubota SVL75-2 Track Loader',
+    id: 4,
+    title: '2019 Kubota SVL75-2',
     year: 2019,
     location: 'United States',
     category: 'track-loaders',
@@ -91,10 +96,11 @@ export const equipmentData: Equipment[] = [
     model: 'SVL75-2',
     image: '/equipment/kubota-svl75-2-track-loader-2019.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 35,
-    title: '2022 Allmand MR15XR Light Tower',
+    id: 5,
+    title: '2022 Allmand MR15XR',
     year: 2022,
     location: 'United States',
     category: 'light-towers',
@@ -103,9 +109,10 @@ export const equipmentData: Equipment[] = [
     model: 'MR15XR',
     image: '/equipment/allmand-mr15xr-light-tower-2022.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 36,
+    id: 6,
     title: '2022 Cat Generator MR15XR',
     year: 2022,
     location: 'United States',
@@ -115,22 +122,24 @@ export const equipmentData: Equipment[] = [
     model: 'MR15XR',
     image: '/equipment/cat-generator-mr15xr-2022.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 37,
-    title: '2019 Wacker Neuson G25 Generator',
+    id: 7,
+    title: '2019 Wacker Neuson g25',
     year: 2019,
     location: 'United States',
     category: 'generators',
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
-    model: 'G25',
+    model: 'g25',
     image: '/equipment/wacker-neuson-g25-generator-2019.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 38,
-    title: '2020 CAT 289D3 Track Loader',
+    id: 8,
+    title: '2020 CAT 289D3',
     year: 2020,
     location: 'United States',
     category: 'track-loaders',
@@ -139,10 +148,11 @@ export const equipmentData: Equipment[] = [
     model: '289D3',
     image: '/equipment/cat-289d3-track-loader-2020.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 39,
-    title: '2014 Skyjack 6042 Telehandler',
+    id: 9,
+    title: '2014 Skyjack 6042',
     year: 2014,
     location: 'United States',
     category: 'telehandlers',
@@ -151,22 +161,24 @@ export const equipmentData: Equipment[] = [
     model: '6042',
     image: '/equipment/skyjack-6042-telehandler-2014.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 40,
-    title: '2022 Bomag BMP8500 Plate Compactor',
+    id: 10,
+    title: '2022 Bomag BMP8500',
     year: 2022,
     location: 'United States',
-    category: 'compactors',
+    category: 'plate-compactors',
     manufacturer: 'Bomag',
     make: 'Bomag',
     model: 'BMP8500',
     image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 41,
-    title: '2012 Bobcat S650 Skid Steer',
+    id: 11,
+    title: '2012 Bobcat S650',
     year: 2012,
     location: 'United States',
     category: 'skid-steers',
@@ -175,10 +187,11 @@ export const equipmentData: Equipment[] = [
     model: 'S650',
     image: '/equipment/bobcat-s650-skid-steer-2012.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 42,
-    title: '2019 Wacker Neuson EZ53 Excavator',
+    id: 12,
+    title: '2019 Wacker Neuson EZ53',
     year: 2019,
     location: 'United States',
     category: 'excavators',
@@ -187,10 +200,11 @@ export const equipmentData: Equipment[] = [
     model: 'EZ53',
     image: '/equipment/wacker-neuson-ez53-excavator-2019.jpeg',
     condition: 'Used',
+    status: 'available',
   },
   {
-    id: 43,
-    title: '2026 Towable Generators Starting at $8,995',
+    id: 13,
+    title: '2026 Towable Generators starting at $8,995',
     price: 8995,
     year: 2026,
     location: 'United States',
@@ -200,5 +214,6 @@ export const equipmentData: Equipment[] = [
     model: 'Towable Generator',
     image: '/equipment/towable-generators-2026.jpeg',
     condition: 'New',
+    status: 'available',
   },
 ];

@@ -52,7 +52,7 @@ export const Sidebar = ({
     onCategoryChange([]);
     onManufacturerChange([]);
     onPriceChange([0, 2000000]);
-    onYearChange([2018, 2024]);
+    onYearChange([1999, 2026]);
   };
 
   return (
@@ -182,8 +182,8 @@ export const Sidebar = ({
           <div className="mt-4">
             <Slider
               value={[yearRange[0], yearRange[1]]}
-              min={2018}
-              max={2024}
+              min={1999}
+              max={2026}
               step={1}
               onValueChange={(value) => onYearChange([value[0], value[1]])}
               className="mb-2"
