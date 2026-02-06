@@ -12,7 +12,7 @@ const Index = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedManufacturers, setSelectedManufacturers] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000000]);
-  const [yearRange, setYearRange] = useState<[number, number]>([2018, 2024]);
+  const [yearRange, setYearRange] = useState<[number, number]>([1999, 2026]);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState('featured');
 
@@ -56,10 +56,10 @@ const Index = () => {
     // Sort
     switch (sortBy) {
       case 'price-low':
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
         break;
       case 'price-high':
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
         break;
       case 'year-new':
         filtered.sort((a, b) => b.year - a.year);
@@ -80,7 +80,7 @@ const Index = () => {
     selectedCategories.length +
     selectedManufacturers.length +
     (priceRange[0] > 0 || priceRange[1] < 2000000 ? 1 : 0) +
-    (yearRange[0] > 2018 || yearRange[1] < 2024 ? 1 : 0);
+    (yearRange[0] > 1999 || yearRange[1] < 2026 ? 1 : 0);
 
   return (
     <div className="min-h-screen bg-background">
@@ -103,7 +103,7 @@ const Index = () => {
             FOR SALE
           </h1>
           <p className="text-white/80 max-w-xl text-lg mb-6">
-            Browse {equipmentData.length} excavators, loaders, dozers, cranes & more from trusted dealers nationwide.
+            Browse {equipmentData.length} pieces of quality construction equipment for sale.
           </p>
           <div className="flex flex-wrap gap-4">
             <button className="bg-primary text-dark-bg px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors">

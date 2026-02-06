@@ -78,7 +78,7 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
               {equipment.hours && (
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  {equipment.hours.toLocaleString()} hrs
+                  {equipment.hours} hrs
                 </span>
               )}
               <span>{equipment.year}</span>
@@ -152,7 +152,7 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
           {equipment.hours && (
             <span className="flex items-center gap-1">
               <Clock className="h-3 w-3" />
-              {equipment.hours.toLocaleString()} hrs
+              {equipment.hours} hrs
             </span>
           )}
         </div>
