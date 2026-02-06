@@ -1,5 +1,5 @@
 import { Equipment } from '@/data/equipment';
-import { Clock, Star, Heart } from 'lucide-react';
+import { Clock, Star, Heart, Wrench, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -60,6 +60,20 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
               <Badge className={conditionColors[equipment.condition]}>{equipment.condition}</Badge>
             </div>
 
+            {(equipment.make || equipment.engine) && (
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-2">
+                {equipment.make && equipment.model && (
+                  <span className="bg-muted px-2 py-0.5 rounded">{equipment.make} · {equipment.model}</span>
+                )}
+                {equipment.engine && (
+                  <span className="bg-muted px-2 py-0.5 rounded flex items-center gap-1">
+                    <Wrench className="h-3 w-3" />
+                    {equipment.engine} Engine
+                  </span>
+                )}
+              </div>
+            )}
+
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-3">
               {equipment.hours && (
                 <span className="flex items-center gap-1">
@@ -74,6 +88,14 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
           <div className="flex items-center justify-between">
             <p className="text-2xl font-bold text-primary">{formatPrice(equipment.price)}</p>
             <div className="flex gap-2">
+              {equipment.facebookUrl && (
+                <Button variant="outline" size="sm" asChild>
+                  <a href={equipment.facebookUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4 mr-1" />
+                    Listing
+                  </a>
+                </Button>
+              )}
               <Button variant="outline" size="sm">Details</Button>
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">Contact Seller</Button>
             </div>
@@ -109,8 +131,21 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
       </div>
 
       <div className="p-4">
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 min-h-[48px]">{equipment.title}</h3>
+        <h3 className="font-semibold text-foreground mb-1 line-clamp-2 min-h-[48px]">{equipment.title}</h3>
         
+        {(equipment.make || equipment.engine) && (
+          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-2">
+            {equipment.make && equipment.model && (
+              <span className="bg-muted px-2 py-0.5 rounded">{equipment.make} · {equipment.model}</span>
+            )}
+            {equipment.engine && (
+              <span className="bg-muted px-2 py-0.5 rounded flex items-center gap-1">
+                <Wrench className="h-3 w-3" />
+                {equipment.engine}
+              </span>
+            )}
+          </div>
+        )}
 
         <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
           <span>{equipment.year}</span>
@@ -124,7 +159,16 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
 
         <div className="flex items-center justify-between pt-3 border-t border-border">
           <p className="text-xl font-bold text-primary">{formatPrice(equipment.price)}</p>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">View Details</Button>
+          <div className="flex gap-1">
+            {equipment.facebookUrl && (
+              <Button size="sm" variant="outline" asChild>
+                <a href={equipment.facebookUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </Button>
+            )}
+            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">View Details</Button>
+          </div>
         </div>
       </div>
     </div>
