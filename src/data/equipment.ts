@@ -480,7 +480,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Allmand',
     make: 'Allmand',
     model: 'MR15XR',
-    image: '/equipment/cat-generator-mr15xr-2022.jpeg',
+    image: '/equipment/allmand-mr15xr-light-tower-2022.jpeg',
     condition: 'Used',
   },
   {
@@ -504,7 +504,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
     model: 'G25',
-    image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
+    image: '/equipment/wacker-neuson-g25-generator-2019.jpeg',
     condition: 'Used',
   },
   {
@@ -516,7 +516,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Caterpillar',
     make: 'Caterpillar',
     model: '289D3',
-    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
+    image: '/equipment/allmand-mr15xr-light-tower-2022.jpeg',
     condition: 'Used',
   },
   {
