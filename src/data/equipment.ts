@@ -516,7 +516,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Caterpillar',
     make: 'Caterpillar',
     model: '289D3',
-    image: '/equipment/allmand-mr15xr-light-tower-2022.jpeg',
+    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
     condition: 'Used',
   },
   {
@@ -540,7 +540,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Bomag',
     make: 'Bomag',
     model: 'BMP8500',
-    image: '/equipment/wacker-neuson-ez53-excavator-2019.jpeg',
+    image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
     condition: 'Used',
   },
   {
@@ -564,7 +564,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
     model: 'EZ53',
-    image: '/equipment/towable-generators-2026.jpeg',
+    image: '/equipment/wacker-neuson-ez53-excavator-2019.jpeg',
     condition: 'Used',
   },
   {
@@ -577,7 +577,7 @@ export const equipmentData: Equipment[] = [
     manufacturer: 'Various',
     make: 'Various',
     model: 'Towable Generator',
-    image: '/equipment/bomag-bmp8500-plate-compactor-2022.jpeg',
+    image: '/equipment/towable-generators-2026.jpeg',
     condition: 'New',
   },
 ];
