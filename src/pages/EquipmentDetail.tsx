@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Share2, Heart } from 'lucide-react';
 import { useState } from 'react';
+import { usePageSEO } from '@/hooks/usePageSEO';
+import { generateEquipmentJsonLd, generateBreadcrumbJsonLd } from '@/lib/jsonLd';
 import logo from '@/assets/logo.png';
 
 const EquipmentDetail = () => {
@@ -16,6 +18,25 @@ const EquipmentDetail = () => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const equipment = equipmentData.find((e) => e.id === Number(id));
+
+  const pageTitle = equipment
+    ? `${equipment.title} | LineLock Equipment`
+    : 'Equipment Not Found | LineLock Equipment';
+
+  usePageSEO({
+    title: pageTitle,
+    description: equipment
+      ? `${equipment.condition} ${equipment.title} for sale. ${equipment.location}. Contact LineLock Equipment at (864) 252-7174.`
+      : 'The equipment listing you are looking for was not found.',
+    canonical: `https://linelockv2.lovable.app/equipment/${id}`,
+  });
+
+  const productJsonLd = equipment ? generateEquipmentJsonLd(equipment) : null;
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: 'https://linelockv2.lovable.app/' },
+    { name: 'Equipment', url: 'https://linelockv2.lovable.app/' },
+    ...(equipment ? [{ name: equipment.title, url: `https://linelockv2.lovable.app/equipment/${id}` }] : []),
+  ]);
 
   if (!equipment) {
     return (
@@ -64,8 +85,13 @@ const EquipmentDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+    <>
+      {productJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <div className="min-h-screen bg-background">
+        <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       {/* Breadcrumb */}
       <div className="bg-card border-b border-border py-3 px-4">
@@ -199,6 +225,7 @@ const EquipmentDetail = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
