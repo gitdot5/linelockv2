@@ -83,12 +83,12 @@ export const EquipmentGrid = ({
               : 'flex flex-col gap-4'
           }
         >
-          {equipment.map((item) => (
-            <EquipmentCard key={item.id} equipment={item} viewMode={viewMode} />
+          {equipment.map((item, index) => (
+            <EquipmentCard key={item.id} equipment={item} viewMode={viewMode} index={index} />
           ))}
         </div>
       ) : (
-        <div className="bg-card rounded-lg border border-border p-12 text-center">
+        <div className="bg-card rounded-lg border border-border p-12 text-center animate-fade-in">
           <p className="text-muted-foreground text-lg">No equipment matches your filters.</p>
           <p className="text-muted-foreground text-sm mt-2">Try adjusting your search or filter criteria.</p>
         </div>

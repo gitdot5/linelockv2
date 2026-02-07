@@ -84,15 +84,15 @@ const EquipmentDetail = () => {
         {/* Back link */}
         <Link
           to="/"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-all duration-200 mb-6 group"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" />
           Back to all listings
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left column — gallery & specs */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6 animate-fade-in">
             <EquipmentGallery images={images} title={equipment.title} />
 
             {/* Title & price (mobile) */}
@@ -115,7 +115,7 @@ const EquipmentDetail = () => {
           </div>
 
           {/* Right column — price card & contact form */}
-          <div className="space-y-6">
+          <div className="space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
             {/* Price card (desktop) */}
             <div className="hidden lg:block bg-card rounded-lg border border-border p-6">
               <h1 className="text-xl font-bold text-foreground mb-2">{equipment.title}</h1>
