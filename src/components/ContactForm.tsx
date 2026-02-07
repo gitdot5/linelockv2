@@ -53,7 +53,7 @@ export const ContactForm = ({ equipmentTitle }: ContactFormProps) => {
   };
 
   return (
-    <div className="bg-card rounded-lg border border-border p-6">
+    <div className="bg-card rounded-lg border border-border p-6 animate-fade-in">
       <h2 className="text-lg font-semibold text-foreground mb-1">Interested in this equipment?</h2>
       <p className="text-sm text-muted-foreground mb-5">Fill out the form and we'll respond within 24 hours.</p>
 
@@ -104,7 +104,7 @@ export const ContactForm = ({ equipmentTitle }: ContactFormProps) => {
             className="mt-1 resize-none"
           />
         </div>
-        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98]">
           <Send className="h-4 w-4 mr-2" />
           Send Inquiry
         </Button>

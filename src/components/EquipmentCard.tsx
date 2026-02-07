@@ -8,10 +8,13 @@ import { Link } from 'react-router-dom';
 interface EquipmentCardProps {
   equipment: Equipment;
   viewMode: 'grid' | 'list';
+  index?: number;
 }
 
-export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
+export const EquipmentCard = ({ equipment, viewMode, index = 0 }: EquipmentCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const staggerDelay = `${Math.min(index * 60, 400)}ms`;
 
   const formatPrice = (price?: number) => {
     if (price === undefined || price === null) {
@@ -33,12 +36,17 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
 
   if (viewMode === 'list') {
     return (
-      <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row">
-        <div className="relative w-full sm:w-72 h-48 sm:h-auto flex-shrink-0">
+      <div
+        className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col sm:flex-row opacity-0 animate-fade-in-up"
+        style={{ animationDelay: staggerDelay, animationFillMode: 'forwards' }}
+      >
+        <div className="relative w-full sm:w-72 h-48 sm:h-auto flex-shrink-0 overflow-hidden">
+          {!imageLoaded && <div className="absolute inset-0 skeleton-shimmer" />}
           <img
             src={equipment.image}
             alt={equipment.title}
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover transition-all duration-500 sm:hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImageLoaded(true)}
           />
           {equipment.featured && (
             <div className="absolute top-2 left-2 flex items-center gap-1 bg-warning text-warning-foreground px-2 py-1 rounded text-xs font-medium">
@@ -47,10 +55,10 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
             </div>
           )}
           <button
-            onClick={() => setIsFavorite(!isFavorite)}
-            className="absolute top-2 right-2 p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-colors"
+            onClick={(e) => { e.preventDefault(); setIsFavorite(!isFavorite); }}
+            className="absolute top-2 right-2 p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-all duration-200 hover:scale-110 active:scale-95"
           >
-            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-destructive text-destructive' : 'text-muted-foreground'}`} />
+            <Heart className={`h-4 w-4 transition-all duration-200 ${isFavorite ? 'fill-destructive text-destructive scale-110' : 'text-muted-foreground'}`} />
           </button>
         </div>
 
@@ -109,12 +117,17 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+    <div
+      className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 group hover-lift opacity-0 animate-fade-in-up"
+      style={{ animationDelay: staggerDelay, animationFillMode: 'forwards' }}
+    >
       <div className="relative h-48 overflow-hidden">
+        {!imageLoaded && <div className="absolute inset-0 skeleton-shimmer" />}
         <img
           src={equipment.image}
           alt={equipment.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={() => setImageLoaded(true)}
         />
         {equipment.featured && (
           <div className="absolute top-2 left-2 flex items-center gap-1 bg-warning text-warning-foreground px-2 py-1 rounded text-xs font-medium">
@@ -126,10 +139,10 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
           {equipment.condition}
         </Badge>
         <button
-          onClick={() => setIsFavorite(!isFavorite)}
-          className="absolute top-2 right-2 p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-colors"
+          onClick={(e) => { e.preventDefault(); setIsFavorite(!isFavorite); }}
+          className="absolute top-2 right-2 p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-all duration-200 hover:scale-110 active:scale-95"
         >
-          <Heart className={`h-4 w-4 ${isFavorite ? 'fill-destructive text-destructive' : 'text-muted-foreground'}`} />
+          <Heart className={`h-4 w-4 transition-all duration-200 ${isFavorite ? 'fill-destructive text-destructive scale-110' : 'text-muted-foreground'}`} />
         </button>
       </div>
 

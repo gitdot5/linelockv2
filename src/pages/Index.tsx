@@ -95,21 +95,21 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/90 via-dark-bg/70 to-dark-bg/50" />
         
         <div className="container mx-auto relative z-10">
-          <span className="inline-block bg-dark-bg-light/80 backdrop-blur-sm text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-primary/20">
+          <span className="inline-block bg-dark-bg-light/80 backdrop-blur-sm text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-primary/20 opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
             🔥 BIGGEST SALE OF THE YEAR — Up to $2,000 OFF!
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight opacity-0 animate-fade-in-up" style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}>
             PREMIUM <span className="text-primary">EQUIPMENT</span><br />
             FOR SALE
           </h1>
-          <p className="text-white/80 max-w-xl text-lg mb-6">
+          <p className="text-white/80 max-w-xl text-lg mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
             Browse {equipmentData.length} pieces of quality construction equipment for sale.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-primary text-dark-bg px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors">
+          <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '550ms', animationFillMode: 'forwards' }}>
+            <button className="bg-primary text-dark-bg px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 active:scale-95">
               Browse Equipment
             </button>
-            <button className="bg-transparent border border-white/30 text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors">
+            <button className="bg-transparent border border-white/30 text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 transition-all duration-200 active:scale-95">
               Get a Quote
             </button>
           </div>
