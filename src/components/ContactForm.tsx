@@ -116,9 +116,9 @@ export const ContactForm = ({ equipmentTitle }: ContactFormProps) => {
           <Phone className="h-4 w-4" />
           (864) 252-7174
         </a>
-        <a href="mailto:support@linelock.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+        <a href="mailto:info@linelockequipment.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
           <Mail className="h-4 w-4" />
-          support@linelock.com
+          info@linelockequipment.com
         </a>
       </div>
     </div>

@@ -188,7 +188,7 @@ const EquipmentDetail = () => {
               <h4 className="font-semibold mb-3 text-primary">Contact</h4>
               <ul className="space-y-2 text-sm text-white/60">
                 <li>(864) 252-7174</li>
-                <li>support@linelock.com</li>
+                <li>info@linelockequipment.com</li>
                 <li>Mon-Sat 8am-6pm EST</li>
               </ul>
             </div>
