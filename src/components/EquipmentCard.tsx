@@ -3,6 +3,7 @@ import { Clock, Star, Heart, Wrench, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface EquipmentCardProps {
   equipment: Equipment;
@@ -96,7 +97,9 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
                   </a>
                 </Button>
               )}
-              <Button variant="outline" size="sm">Details</Button>
+              <Button variant="outline" size="sm" asChild>
+                <Link to={`/equipment/${equipment.id}`}>Details</Link>
+              </Button>
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">Contact Seller</Button>
             </div>
           </div>
@@ -167,7 +170,9 @@ export const EquipmentCard = ({ equipment, viewMode }: EquipmentCardProps) => {
                 </a>
               </Button>
             )}
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">View Details</Button>
+            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <Link to={`/equipment/${equipment.id}`}>View Details</Link>
+            </Button>
           </div>
         </div>
       </div>
