@@ -44,7 +44,8 @@ export const EquipmentCard = ({ equipment, viewMode, index = 0 }: EquipmentCardP
           {!imageLoaded && <div className="absolute inset-0 skeleton-shimmer" />}
           <img
             src={equipment.image}
-            alt={equipment.title}
+            alt={`${equipment.year} ${equipment.manufacturer} ${equipment.model || ''} ${equipment.category.replace(/-/g, ' ')} for sale`}
+            loading="lazy"
             className={`w-full h-full object-cover transition-all duration-500 sm:hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
           />
@@ -125,7 +126,8 @@ export const EquipmentCard = ({ equipment, viewMode, index = 0 }: EquipmentCardP
         {!imageLoaded && <div className="absolute inset-0 skeleton-shimmer" />}
         <img
           src={equipment.image}
-          alt={equipment.title}
+          alt={`${equipment.year} ${equipment.manufacturer} ${equipment.model || ''} ${equipment.category.replace(/-/g, ' ')} for sale`}
+          loading="lazy"
           className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setImageLoaded(true)}
         />

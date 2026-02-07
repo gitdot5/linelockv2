@@ -4,10 +4,18 @@ import { Sidebar } from '@/components/Sidebar';
 import { EquipmentGrid } from '@/components/EquipmentGrid';
 import { MobileFilters } from '@/components/MobileFilters';
 import { equipmentData } from '@/data/equipment';
+import { usePageSEO } from '@/hooks/usePageSEO';
+import { generateOrganizationJsonLd, generateBreadcrumbJsonLd } from '@/lib/jsonLd';
 import heroBanner from '@/assets/hero-banner.jpg';
 import logo from '@/assets/logo.png';
 
 const Index = () => {
+  usePageSEO({
+    title: 'LineLock Equipment — Premium Construction Equipment For Sale',
+    description: `Browse ${equipmentData.length}+ pieces of quality construction equipment for sale. Skid steers, excavators, generators, track loaders & more. 0% financing available.`,
+    canonical: 'https://linelockv2.lovable.app/',
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedManufacturers, setSelectedManufacturers] = useState<string[]>([]);
@@ -15,6 +23,12 @@ const Index = () => {
   const [yearRange, setYearRange] = useState<[number, number]>([1999, 2026]);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState('featured');
+
+  const orgJsonLd = generateOrganizationJsonLd();
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: 'https://linelockv2.lovable.app/' },
+    { name: 'Construction Equipment', url: 'https://linelockv2.lovable.app/' },
+  ]);
 
   const filteredEquipment = useMemo(() => {
     let filtered = equipmentData.filter((item) => {
@@ -83,8 +97,11 @@ const Index = () => {
     (yearRange[0] > 1999 || yearRange[1] < 2026 ? 1 : 0);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <div className="min-h-screen bg-background">
+        <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       {/* Hero Section */}
       <section 
@@ -213,6 +230,7 @@ const Index = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
