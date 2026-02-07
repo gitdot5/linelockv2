@@ -208,7 +208,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-6 text-sm text-white/40 text-center">
-            © 2024 LineLock Equipment. All rights reserved. Made in USA 🇺🇸
+            © 2026 LineLock Equipment. All rights reserved. Made by WeekThink 🇺🇸
           </div>
         </div>
       </footer>
