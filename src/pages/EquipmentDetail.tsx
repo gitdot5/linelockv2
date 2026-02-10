@@ -4,13 +4,14 @@ import { Header } from '@/components/Header';
 import { EquipmentGallery } from '@/components/EquipmentGallery';
 import { EquipmentSpecsTable } from '@/components/EquipmentSpecsTable';
 import { ContactForm } from '@/components/ContactForm';
+import { Footer } from '@/components/Footer';
+import { RelatedEquipment } from '@/components/RelatedEquipment';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Share2, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { usePageSEO } from '@/hooks/usePageSEO';
 import { generateEquipmentJsonLd, generateBreadcrumbJsonLd } from '@/lib/jsonLd';
-import logo from '@/assets/logo.png';
 
 const EquipmentDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -181,49 +182,11 @@ const EquipmentDetail = () => {
             <ContactForm equipmentTitle={equipment.title} />
           </div>
         </div>
+
+        <RelatedEquipment currentEquipment={equipment} />
       </main>
 
-      {/* Footer */}
-      <footer className="bg-dark-bg text-white py-8 px-4 mt-12">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <img src={logo} alt="LineLock Equipment" className="h-10 w-auto mb-4" />
-              <p className="text-white/60 text-sm">
-                American-made quality for skid steers, excavators, and tractors. Built to last.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3 text-primary">Browse</h4>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li><Link to="/" className="hover:text-primary transition-colors">All Equipment</Link></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Excavators</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Track Loaders</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Generators</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3 text-primary">Services</h4>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li><a href="#" className="hover:text-primary transition-colors">Sell Equipment</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">0% Financing</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Fast Shipping</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3 text-primary">Contact</h4>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li>(864) 252-7174</li>
-                <li>info@linelockequipment.com</li>
-                <li>Mon-Sat 8am-6pm EST</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 mt-8 pt-6 text-sm text-white/40 text-center">
-            © 2026 LineLock Equipment. All rights reserved. Made by WeekThink 🇺🇸
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
     </>
   );
