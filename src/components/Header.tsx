@@ -2,6 +2,7 @@ import { Search, Phone, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 
 interface HeaderProps {
@@ -54,12 +55,14 @@ export const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
 
           {/* Nav */}
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="#" className="text-primary font-medium transition-colors">Home</a>
-            <a href="#" className="text-white hover:text-primary font-medium transition-colors">About</a>
-            <a href="#" className="text-white hover:text-primary font-medium transition-colors">Products</a>
-            <a href="#" className="text-white hover:text-primary font-medium transition-colors">Blog</a>
-            <a href="#" className="text-white hover:text-primary font-medium transition-colors">Contact</a>
-            <Button className="bg-primary text-dark-bg hover:bg-primary/90 font-semibold">GET A QUOTE</Button>
+            <Link to="/" className="text-primary font-medium transition-colors">Home</Link>
+            <Link to="/sell-equipment" className="text-white hover:text-primary font-medium transition-colors">Sell</Link>
+            <Link to="/financing" className="text-white hover:text-primary font-medium transition-colors">Financing</Link>
+            <Link to="/shipping" className="text-white hover:text-primary font-medium transition-colors">Shipping</Link>
+            <Link to="/contact" className="text-white hover:text-primary font-medium transition-colors">Contact</Link>
+            <Link to="/contact">
+              <Button className="bg-primary text-dark-bg hover:bg-primary/90 font-semibold">GET A QUOTE</Button>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -90,12 +93,14 @@ export const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <nav className="lg:hidden mt-4 pb-4 border-t border-dark-bg-light pt-4 flex flex-col gap-3">
-            <a href="#" className="text-primary font-medium">Home</a>
-            <a href="#" className="text-white hover:text-primary font-medium">About</a>
-            <a href="#" className="text-white hover:text-primary font-medium">Products</a>
-            <a href="#" className="text-white hover:text-primary font-medium">Blog</a>
-            <a href="#" className="text-white hover:text-primary font-medium">Contact</a>
-            <Button className="w-full bg-primary text-dark-bg hover:bg-primary/90 font-semibold">GET A QUOTE</Button>
+            <Link to="/" className="text-primary font-medium" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link to="/sell-equipment" className="text-white hover:text-primary font-medium" onClick={() => setMobileMenuOpen(false)}>Sell Equipment</Link>
+            <Link to="/financing" className="text-white hover:text-primary font-medium" onClick={() => setMobileMenuOpen(false)}>Financing</Link>
+            <Link to="/shipping" className="text-white hover:text-primary font-medium" onClick={() => setMobileMenuOpen(false)}>Shipping</Link>
+            <Link to="/contact" className="text-white hover:text-primary font-medium" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="w-full bg-primary text-dark-bg hover:bg-primary/90 font-semibold">GET A QUOTE</Button>
+            </Link>
           </nav>
         )}
       </div>
