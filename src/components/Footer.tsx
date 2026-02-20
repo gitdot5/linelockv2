@@ -32,7 +32,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3 text-primary">Contact</h4>
             <ul className="space-y-2 text-sm text-white/60">
-              <li><a href="tel:8642527174" className="hover:text-primary transition-colors">(864) 252-7174</a></li>
+              <li><a href="tel:8644281972" className="hover:text-primary transition-colors">(864) 428-1972</a></li>
               <li><a href="mailto:info@linelockequipment.com" className="hover:text-primary transition-colors">info@linelockequipment.com</a></li>
               <li>Mon-Sat 8am-6pm EST</li>
               <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us →</Link></li>

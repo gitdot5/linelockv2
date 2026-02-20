@@ -70,8 +70,8 @@ const Shipping = () => {
                   Get a Quote
                 </Button>
               </Link>
-              <a href="tel:8642527174">
-                <Button variant="outline">Call (864) 252-7174</Button>
+              <a href="tel:8644281972">
+                <Button variant="outline">Call (864) 428-1972</Button>
               </a>
             </div>
           </div>

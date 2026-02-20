@@ -11,7 +11,7 @@ const Financing = () => {
 
   usePageSEO({
     title: '0% Financing Available | LineLock Equipment',
-    description: 'Get 0% financing on quality construction equipment. Easy application, fast approval. Contact LineLock Equipment at (864) 252-7174.',
+    description: 'Get 0% financing on quality construction equipment. Easy application, fast approval. Contact LineLock Equipment at (864) 428-1972.',
     canonical: 'https://linelockv2.lovable.app/financing',
   });
 
@@ -67,7 +67,7 @@ const Financing = () => {
                 <h3 className="font-semibold text-foreground mb-2">How to Apply</h3>
                 <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
                   <li>Browse our <Link to="/" className="text-primary hover:underline">equipment listings</Link></li>
-                  <li>Submit an inquiry or call us at (864) 252-7174</li>
+                  <li>Submit an inquiry or call us at (864) 428-1972</li>
                   <li>Complete a short credit application</li>
                   <li>Get approved and start using your equipment</li>
                 </ol>

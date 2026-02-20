@@ -27,7 +27,7 @@ const EquipmentDetail = () => {
   usePageSEO({
     title: pageTitle,
     description: equipment
-      ? `${equipment.condition} ${equipment.title} for sale. ${equipment.location}. Contact LineLock Equipment at (864) 252-7174.`
+      ? `${equipment.condition} ${equipment.title} for sale. ${equipment.location}. Contact LineLock Equipment at (864) 428-1972.`
       : 'The equipment listing you are looking for was not found.',
     canonical: `https://linelockv2.lovable.app/equipment/${id}`,
   });

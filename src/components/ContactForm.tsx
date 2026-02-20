@@ -112,9 +112,9 @@ export const ContactForm = ({ equipmentTitle }: ContactFormProps) => {
 
       <div className="mt-6 pt-5 border-t border-border space-y-3">
         <p className="text-sm font-medium text-foreground">Or contact us directly:</p>
-        <a href="tel:8642527174" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+        <a href="tel:8644281972" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
           <Phone className="h-4 w-4" />
-          (864) 252-7174
+          (864) 428-1972
         </a>
         <a href="mailto:info@linelockequipment.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
           <Mail className="h-4 w-4" />
