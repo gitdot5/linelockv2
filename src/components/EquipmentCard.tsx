@@ -137,15 +137,20 @@ export const EquipmentCard = ({ equipment, viewMode, index = 0 }: EquipmentCardP
             Featured
           </div>
         )}
-        <Badge className={`absolute top-2 right-12 ${conditionColors[equipment.condition]}`}>
-          {equipment.condition}
-        </Badge>
-        <button
-          onClick={(e) => { e.preventDefault(); setIsFavorite(!isFavorite); }}
-          className="absolute top-2 right-2 p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-all duration-200 hover:scale-110 active:scale-95"
-        >
-          <Heart className={`h-4 w-4 transition-all duration-200 ${isFavorite ? 'fill-destructive text-destructive scale-110' : 'text-muted-foreground'}`} />
-        </button>
+        <div className="absolute top-2 right-2 flex items-center gap-1">
+          {equipment.badges?.map((badge) => (
+            <Badge key={badge} className="bg-accent text-accent-foreground text-xs">{badge}</Badge>
+          ))}
+          <Badge className={`${conditionColors[equipment.condition]}`}>
+            {equipment.condition}
+          </Badge>
+          <button
+            onClick={(e) => { e.preventDefault(); setIsFavorite(!isFavorite); }}
+            className="p-2 bg-card/80 backdrop-blur-sm rounded-full hover:bg-card transition-all duration-200 hover:scale-110 active:scale-95"
+          >
+            <Heart className={`h-4 w-4 transition-all duration-200 ${isFavorite ? 'fill-destructive text-destructive scale-110' : 'text-muted-foreground'}`} />
+          </button>
+        </div>
       </div>
 
       <div className="p-4">

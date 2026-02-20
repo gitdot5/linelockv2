@@ -10,6 +10,7 @@ export interface Equipment {
   make?: string;
   model?: string;
   engine?: string;
+  badges?: string[];
   facebookUrl?: string;
   image: string;
   featured?: boolean;
@@ -22,8 +23,8 @@ export const categories = [
   { id: 'trenchers', name: 'Trenchers', count: 1 },
   { id: 'compactors', name: 'Compactors', count: 1 },
   { id: 'track-loaders', name: 'Track Loaders', count: 2 },
-  { id: 'light-towers', name: 'Light Towers', count: 1 },
-  { id: 'generators', name: 'Generators', count: 3 },
+  { id: 'light-towers', name: 'Light Towers', count: 2 },
+  { id: 'generators', name: 'Generators', count: 2 },
   { id: 'telehandlers', name: 'Telehandlers', count: 1 },
   { id: 'plate-compactors', name: 'Plate Compactors', count: 1 },
   { id: 'skid-steers', name: 'Skid Steers', count: 1 },
@@ -71,7 +72,7 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 3,
-    title: '2019 Wacker Neuson RD12A low hours (honda engine)',
+    title: '2019 Wacker Neuson RD12A',
     hours: 'Low',
     year: 2019,
     location: 'United States',
@@ -80,8 +81,9 @@ export const equipmentData: Equipment[] = [
     make: 'Wacker Neuson',
     model: 'RD12A',
     engine: 'Honda',
+    badges: ['Low hrs'],
     facebookUrl: 'https://www.facebook.com/marketplace/item/2322520291578487/',
-    image: '/equipment/cat-289d3-track-loader-2020.jpeg', // TODO: replace with wacker-neuson-rd12a-compactor-2019.jpeg when uploaded
+    image: '/equipment/cat-289d3-track-loader-2020.jpeg',
     condition: 'Used',
     status: 'available',
   },
@@ -100,7 +102,7 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 5,
-    title: '2022 Allmand MR15XR',
+    title: '2022 Allmand MR15XR Light Tower',
     year: 2022,
     location: 'United States',
     category: 'light-towers',
@@ -113,12 +115,12 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 6,
-    title: '2022 Cat Generator MR15XR',
+    title: '2022 Allmand MR15XR Light Tower',
     year: 2022,
     location: 'United States',
-    category: 'generators',
-    manufacturer: 'Caterpillar',
-    make: 'Caterpillar',
+    category: 'light-towers',
+    manufacturer: 'Allmand',
+    make: 'Allmand',
     model: 'MR15XR',
     image: '/equipment/cat-generator-mr15xr-2022.jpeg',
     condition: 'Used',
@@ -126,13 +128,13 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 7,
-    title: '2019 Wacker Neuson g25',
+    title: '2019 Wacker Neuson G25',
     year: 2019,
     location: 'United States',
     category: 'generators',
     manufacturer: 'Wacker Neuson',
     make: 'Wacker Neuson',
-    model: 'g25',
+    model: 'G25',
     image: '/equipment/wacker-neuson-g25-generator-2019.jpeg',
     condition: 'Used',
     status: 'available',
@@ -152,13 +154,13 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 9,
-    title: '2014 Skyjack 6042',
+    title: '2014 Skyjack SJ6042',
     year: 2014,
     location: 'United States',
     category: 'telehandlers',
     manufacturer: 'Skyjack',
     make: 'Skyjack',
-    model: '6042',
+    model: 'SJ6042',
     image: '/equipment/skyjack-6042-telehandler-2014.jpeg',
     condition: 'Used',
     status: 'available',
@@ -204,7 +206,7 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 13,
-    title: '2026 Towable Generators starting at $8,995',
+    title: '2026 Towable Generators',
     price: 8995,
     year: 2026,
     location: 'United States',
