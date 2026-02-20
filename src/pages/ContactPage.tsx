@@ -11,7 +11,7 @@ const ContactPage = () => {
 
   usePageSEO({
     title: 'Contact Us | LineLock Equipment',
-    description: 'Get in touch with LineLock Equipment. Call (864) 252-7174 or email info@linelockequipment.com. Mon-Sat 8am-6pm EST.',
+    description: 'Get in touch with LineLock Equipment. Call (864) 428-1972 or email info@linelockequipment.com. Mon-Sat 8am-6pm EST.',
     canonical: 'https://linelockv2.lovable.app/contact',
   });
 
@@ -42,7 +42,7 @@ const ContactPage = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 {[
-                  { icon: Phone, label: 'Phone', value: '(864) 252-7174', href: 'tel:8642527174' },
+                  { icon: Phone, label: 'Phone', value: '(864) 428-1972', href: 'tel:8644281972' },
                   { icon: Mail, label: 'Email', value: 'info@linelockequipment.com', href: 'mailto:info@linelockequipment.com' },
                   { icon: Clock, label: 'Hours', value: 'Mon-Sat 8am-6pm EST' },
                   { icon: MapPin, label: 'Location', value: 'United States' },

@@ -11,7 +11,7 @@ const SellEquipment = () => {
 
   usePageSEO({
     title: 'Sell Your Equipment | LineLock Equipment',
-    description: 'Sell your construction equipment with LineLock. Get top dollar for your used excavators, loaders, and generators. Free valuations. Call (864) 252-7174.',
+    description: 'Sell your construction equipment with LineLock. Get top dollar for your used excavators, loaders, and generators. Free valuations. Call (864) 428-1972.',
     canonical: 'https://linelockv2.lovable.app/sell-equipment',
   });
 

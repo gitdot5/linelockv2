@@ -31,7 +31,7 @@ export const generateEquipmentJsonLd = (equipment: Equipment) => {
       seller: {
         '@type': 'Organization',
         name: 'LineLock Equipment',
-        telephone: '+18642527174',
+        telephone: '+18644281972',
         email: 'info@linelockequipment.com',
       },
     },
@@ -43,7 +43,7 @@ export const generateOrganizationJsonLd = () => ({
   '@type': 'Organization',
   name: 'LineLock Equipment',
   url: 'https://linelockv2.lovable.app',
-  telephone: '+18642527174',
+  telephone: '+18644281972',
   email: 'info@linelockequipment.com',
   address: {
     '@type': 'PostalAddress',

@@ -25,7 +25,7 @@ export const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
           <div className="flex items-center gap-4 text-white/80">
             <span className="flex items-center gap-1">
               <Phone className="h-3 w-3" />
-              (864) 252-7174
+              (864) 428-1972
             </span>
           </div>
         </div>

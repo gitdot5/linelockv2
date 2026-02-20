@@ -18,7 +18,7 @@ const CategoryPage = () => {
 
   usePageSEO({
     title: `${categoryName} For Sale | LineLock Equipment`,
-    description: `Browse quality ${categoryName.toLowerCase()} for sale. American-made construction equipment with 0% financing available. Call (864) 252-7174.`,
+    description: `Browse quality ${categoryName.toLowerCase()} for sale. American-made construction equipment with 0% financing available. Call (864) 428-1972.`,
     canonical: `https://linelockv2.lovable.app/category/${slug}`,
   });
 
